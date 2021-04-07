@@ -18,10 +18,10 @@ The resources are generally slides and code samples.
 
 The slides are designed to be used with a cli presentation tool `lookatme`.
 
-Demos were usually done using simple ammonite scripts or just using the repl. We used ammonite for scala 2.12 but they should generally work with 2.13 onwards. Scripts were run with `amm [SCRIPT.sc]`
+Demos were usually done using simple ammonite scripts or just using the repl. We used ammonite for scala 2.12 but they should generally work with 2.13 onwards. Scripts were run with `amm [SCRIPT.sc]`.
 
 # Methodology
 
-Most of the content focuses on just the syntactic aspects of scala and the standard library, rather than going to deeply into FP.
+Most of the content focuses on just the syntactic aspects of scala and the standard library, rather than going too deeply into FP.
 
 The training was designed for a specific code base that deliberately doesn't use advanced concepts like FP and concurrency to make it more accessible to juniors and analysts.
