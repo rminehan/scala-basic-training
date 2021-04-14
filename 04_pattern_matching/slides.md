@@ -861,6 +861,16 @@ There is a talk on this.
 
 ---
 
+# Official docs
+
+Quick intro: https://docs.scala-lang.org/tour/pattern-matching.html
+
+More details: https://docs.scala-lang.org/overviews/scala-book/match-expressions.html
+
+Look into partial functions too.
+
+---
+
 ```
   ___                  _   _
  / _ \ _   _  ___  ___| |_(_) ___  _ __  ___
