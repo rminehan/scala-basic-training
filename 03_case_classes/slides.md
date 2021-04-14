@@ -5,18 +5,18 @@ date: 2021-04-22
 ---
 
 ```
-  ____               
- / ___|__ _ ___  ___ 
+  ____
+ / ___|__ _ ___  ___
 | |   / _` / __|/ _ \
 | |__| (_| \__ \  __/
  \____\__,_|___/\___|
-                     
-      _                         
-  ___| | __ _ ___ ___  ___  ___ 
+
+      _
+  ___| | __ _ ___ ___  ___  ___
  / __| |/ _` / __/ __|/ _ \/ __|
 | (__| | (_| \__ \__ \  __/\__ \
  \___|_|\__,_|___/___/\___||___/
-                                
+
 ```
 
 (and companion objects)
@@ -56,7 +56,7 @@ A java wrapper for stictly positive integers.
 ```java
 public class PositiveInt {
   private int _value;
-  
+
   public PositiveInt(int value) {
     if (value > 0) {
       _value = value;
@@ -88,7 +88,7 @@ Looking at the api:
 
 ```java
 public class PositiveInt {
-  
+
   public int get() { ... }
 
   public PositiveInt add(PositiveInt other) { ... }
@@ -120,7 +120,7 @@ Java (compressed to fit on one slide)
 ```java
 public class PositiveInt {
   private int _value;
-  
+
   public PositiveInt(int value) {
     if (value > 0) { _value = value; }
     else { throw new IllegalArgumentException("Input isn't positive: " + value); }
@@ -141,9 +141,9 @@ public class PositiveInt(value: Int) {
   if (value <= 0) {
     throw new IllegalArgumentException(s"Input isn't positive: $value")
   }
-  
+
   public def get: Int = value
-  
+
   public def add(other: PositiveInt): PositiveInt = new PositiveInt(this.get + other.get)
 }
 
@@ -171,7 +171,7 @@ public class PositiveInt(value: Int) {
   }
 
   public def get: Int = value
-  
+
   public def add(other: PositiveInt): PositiveInt = new PositiveInt(this.get + other.get)
 }
 
@@ -197,7 +197,7 @@ class PositiveInt(val value: Int) {
   if (value <= 0) {
     throw new IllegalArgumentException(s"Input isn't positive: $value")
   }
-  
+
   def add(other: PositiveInt): PositiveInt = new PositiveInt(this.value + other.value)
 }
 
@@ -251,7 +251,7 @@ Java (compressed)
 ```java
 public class PositiveInt {
   private int _value = 0;
-  
+
   public PositiveInt(int value) {
     if (value > 0) { _value = value; }
     else { throw new IllegalArgumentException("Input isn't positive: " + value); }
@@ -272,7 +272,7 @@ class PositiveInt(val value: Int) {
   if (value <= 0) {
     throw new IllegalArgumentException(s"Input isn't positive: $value")
   }
-  
+
   def add(other: PositiveInt): PositiveInt = new PositiveInt(this.value + other.value)
 }
 
@@ -420,7 +420,7 @@ case class PositiveInt(val value: Int) {
   if (value <= 0) {
     throw new IllegalArgumentException(s"Input isn't positive: $value")
   }
-  
+
   def add(other: PositiveInt): PositiveInt = new PositiveInt(this.value + other.value)
 }
 
@@ -441,7 +441,7 @@ Note the "case" keyword before "class" on line 1.
    if (value <= 0) {
      throw new IllegalArgumentException(s"Input isn't positive: $value")
    }
-  
+
 -  def add(other: PositiveInt): PositiveInt = new PositiveInt(this.value + other.value)
 +  def add(other: PositiveInt): PositiveInt =     PositiveInt(this.value + other.value)
  }
@@ -572,7 +572,7 @@ Makes more sense here.
 
 ---
 
-# Reinforcing: class vs case class 
+# Reinforcing: class vs case class
 
 Goodies like pattern matching and `copy` are just for case classes.
 
@@ -739,15 +739,15 @@ val score4 = score3.incrementLeft
 ---
 
 ```
-  ___                  _   _                 
- / _ \ _   _  ___  ___| |_(_) ___  _ __  ___ 
+  ___                  _   _
+ / _ \ _   _  ___  ___| |_(_) ___  _ __  ___
 | | | | | | |/ _ \/ __| __| |/ _ \| '_ \/ __|
 | |_| | |_| |  __/\__ \ |_| | (_) | | | \__ \
  \__\_\\__,_|\___||___/\__|_|\___/|_| |_|___/
-                                             
 
-  ____                                     _       
- / ___|___  _ __ ___  _ __ ___   ___ _ __ | |_ ___ 
+
+  ____                                     _
+ / ___|___  _ __ ___  _ __ ___   ___ _ __ | |_ ___
 | |   / _ \| '_ ` _ \| '_ ` _ \ / _ \ '_ \| __/ __|
 | |__| (_) | | | | | | | | | | |  __/ | | | |_\__ \
  \____\___/|_| |_| |_|_| |_| |_|\___|_| |_|\__|___/

@@ -5,18 +5,18 @@ date: 2021-04-27
 ---
 
 ```
- ____       _   _                  
-|  _ \ __ _| |_| |_ ___ _ __ _ __  
-| |_) / _` | __| __/ _ \ '__| '_ \ 
+ ____       _   _
+|  _ \ __ _| |_| |_ ___ _ __ _ __
+| |_) / _` | __| __/ _ \ '__| '_ \
 |  __/ (_| | |_| ||  __/ |  | | | |
 |_|   \__,_|\__|\__\___|_|  |_| |_|
-                                   
- __  __       _       _     _             
-|  \/  | __ _| |_ ___| |__ (_)_ __   __ _ 
+
+ __  __       _       _     _
+|  \/  | __ _| |_ ___| |__ (_)_ __   __ _
 | |\/| |/ _` | __/ __| '_ \| | '_ \ / _` |
 | |  | | (_| | || (__| | | | | | | | (_| |
 |_|  |_|\__,_|\__\___|_| |_|_|_| |_|\__, |
-                                    |___/ 
+                                    |___/
 ```
 
 (and destructuring)
@@ -58,7 +58,7 @@ Without a default value, you run the risk of a match exception.
 3 match {
   case 4 => println("Got 4!")
   case 5 => println("Got 5!")
-} 
+}
 ```
 
 Generates
@@ -77,7 +77,7 @@ scala.MatchError: 3 (of class java.lang.Integer)
   case 4 => println("Got 4!")
   case 5 => println("Got 5!")
   case _ => println("Unknown input")
-} 
+}
 ```
 
 ---
@@ -174,7 +174,7 @@ Here `name` is used in the same way in both alternatives:
 person match {
   case Person(name, 13) | Person(name, 15) => println("Got 13 or 15 year old")
   case _ => println("Default case")
-} 
+}
 ```
 
 Compiler says no:
@@ -198,7 +198,7 @@ Means "anything goes".
 person match {
   case Person("Boban", _)  => ...
   case _ => ...
-} 
+}
 ```
 
 Case 1: `age` can be anything.
@@ -213,7 +213,7 @@ Case 2: `Person` can be anything.
 person match {
   case Person("Boban", _)  => ...
   case _ => ...
-} 
+}
 ```
 
 Both underscores are doing the same thing.
@@ -228,12 +228,12 @@ The second one just happens to be at the "top level".
 person match {
   case Person("Boban", _)   => println(s"Got name: $name")
   case _ => ...
-} 
+}
 
 person match {
   case Person("Boban", age) => println(s"Got name: $name")
   case unmatched => ...
-} 
+}
 ```
 
 `age` is the same as `_`
@@ -378,7 +378,7 @@ val list = List(
 )
 
 // Assumes two pairs in the list
-val List((name1, pos1), (name2, pos2)) = list 
+val List((name1, pos1), (name2, pos2)) = list
 ```
 
 ---
@@ -393,7 +393,7 @@ val list = List(
 )
 
 // Assumes two pairs in the list
-val List((name1, pos1), (name2, pos2)) = list 
+val List((name1, pos1), (name2, pos2)) = list
 ```
 
 ```
@@ -848,7 +848,7 @@ There is a talk on this.
 - collections
 
 
-- `@` for labelling 
+- `@` for labelling
 
 
 - list's `Nil` and `head :: tail`
@@ -862,18 +862,18 @@ There is a talk on this.
 ---
 
 ```
-  ___                  _   _                 
- / _ \ _   _  ___  ___| |_(_) ___  _ __  ___ 
+  ___                  _   _
+ / _ \ _   _  ___  ___| |_(_) ___  _ __  ___
 | | | | | | |/ _ \/ __| __| |/ _ \| '_ \/ __|
 | |_| | |_| |  __/\__ \ |_| | (_) | | | \__ \
  \__\_\\__,_|\___||___/\__|_|\___/|_| |_|___/
-                                             
-  ____                                     _       
- / ___|___  _ __ ___  _ __ ___   ___ _ __ | |_ ___ 
+
+  ____                                     _
+ / ___|___  _ __ ___  _ __ ___   ___ _ __ | |_ ___
 | |   / _ \| '_ ` _ \| '_ ` _ \ / _ \ '_ \| __/ __|
 | |__| (_) | | | | | | | | | | |  __/ | | | |_\__ \
  \____\___/|_| |_| |_|_| |_| |_|\___|_| |_|\__|___/
-                                                   
+
 ```
 
 ---

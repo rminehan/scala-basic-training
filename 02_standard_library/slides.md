@@ -7,18 +7,18 @@ date: 2021-04-20
 The:
 
 ```
- ____  _                  _               _ 
+ ____  _                  _               _
 / ___|| |_ __ _ _ __   __| | __ _ _ __ __| |
 \___ \| __/ _` | '_ \ / _` |/ _` | '__/ _` |
  ___) | || (_| | | | | (_| | (_| | | | (_| |
 |____/ \__\__,_|_| |_|\__,_|\__,_|_|  \__,_|
-                                            
- _     _ _                          
-| |   (_) |__  _ __ __ _ _ __ _   _ 
+
+ _     _ _
+| |   (_) |__  _ __ __ _ _ __ _   _
 | |   | | '_ \| '__/ _` | '__| | | |
 | |___| | |_) | | | (_| | |  | |_| |
 |_____|_|_.__/|_|  \__,_|_|   \__, |
-                              |___/ 
+                              |___/
 ```
 
 ---
@@ -65,12 +65,12 @@ Common useful stuff
 ---
 
 ```
- ____       _           _ _   _                
-|  _ \ _ __(_)_ __ ___ (_) |_(_)_   _____  ___ 
+ ____       _           _ _   _
+|  _ \ _ __(_)_ __ ___ (_) |_(_)_   _____  ___
 | |_) | '__| | '_ ` _ \| | __| \ \ / / _ \/ __|
 |  __/| |  | | | | | | | | |_| |\ V /  __/\__ \
 |_|   |_|  |_|_| |_| |_|_|\__|_| \_/ \___||___/
-                                               
+
 ```
 
 ---
@@ -113,10 +113,10 @@ I'll mention some specifics for java/scala and differences to python.
 # Overflow
 
 ```scala
-@ Int.MaxValue 
+@ Int.MaxValue
 res0: Int = 2147483647
 
-@ Int.MinValue 
+@ Int.MinValue
 res1: Int = -2147483648
 ```
 
@@ -185,15 +185,15 @@ Fixed length (can't resize).
 Elements can change though.
 
 ```scala
-@ val a = Array(1, 2, 3) 
+@ val a = Array(1, 2, 3)
 a: Array[Int] = Array(1, 2, 3)
 
-@ a(1) = -5 
+@ a(1) = -5
 
-@ a 
+@ a
 res6: Array[Int] = Array(1, -5, 3)
 
-@ a.append(4) 
+@ a.append(4)
 cmd3.sc:1: value append is not a member of Array[Int]
 val res3 = a.append(4)
              ^
@@ -207,18 +207,18 @@ Compilation Failed
 Arrays have a type parameter:
 
 ```scala
-@ val bools = Array(true, true, false) 
+@ val bools = Array(true, true, false)
 bools: Array[Boolean] = Array(true, true, false)
 
-@ val floats = Array(1.3f, 2.0f, -3.01f) 
+@ val floats = Array(1.3f, 2.0f, -3.01f)
 floats: Array[Float] = Array(1.3F, 2.0F, -3.01F)
 
 
 def gimmeBools(bools: Array[Boolean]): Unit = {
   println(bools)
-} 
+}
 
-gimmeBools(floats) 
+gimmeBools(floats)
 cmd51.sc:1: type mismatch;
  found   : Array[Float]
  required: Array[Boolean]
@@ -299,12 +299,12 @@ More on this in our COMPAT course (coming in 2025).
 ---
 
 ```
- ____  _        _             
-/ ___|| |_ _ __(_)_ __   __ _ 
+ ____  _        _
+/ ___|| |_ _ __(_)_ __   __ _
 \___ \| __| '__| | '_ \ / _` |
  ___) | |_| |  | | | | | (_| |
 |____/ \__|_|  |_|_| |_|\__, |
-                        |___/ 
+                        |___/
 ```
 
 ---
@@ -338,10 +338,10 @@ s.substring(3) // "def"
 Immutable
 
 ```scala
-@ val s = "abcdef" 
+@ val s = "abcdef"
 s: String = "abcdef"
 
-@ s(1) = 'B' 
+@ s(1) = 'B'
 cmd9.sc:1: value update is not a member of String
 val res9 = s(1) = 'B'
            ^
@@ -355,9 +355,9 @@ Compilation Failed
 Scala:
 
 ```scala
-@ val s = "1234" 
+@ val s = "1234"
 
-@ s.toInt 
+@ s.toInt
 res14: Int = 1234
 ```
 
@@ -430,12 +430,12 @@ Enables a powerful syntax but the extra layers can be confusing.
 ---
 
 ```
- _____            _           
-|_   _|   _ _ __ | | ___  ___ 
+ _____            _
+|_   _|   _ _ __ | | ___  ___
   | || | | | '_ \| |/ _ \/ __|
   | || |_| | |_) | |  __/\__ \
   |_| \__,_| .__/|_|\___||___/
-           |_|                
+           |_|
 ```
 
 Pairs, triplets, quadruplets etc...
@@ -549,12 +549,12 @@ Which one is easier to read?
 ---
 
 ```
-  ____      _ _           _   _                 
- / ___|___ | | | ___  ___| |_(_) ___  _ __  ___ 
+  ____      _ _           _   _
+ / ___|___ | | | ___  ___| |_(_) ___  _ __  ___
 | |   / _ \| | |/ _ \/ __| __| |/ _ \| '_ \/ __|
 | |__| (_) | | |  __/ (__| |_| | (_) | | | \__ \
  \____\___/|_|_|\___|\___|\__|_|\___/|_| |_|___/
-                                                
+
 ```
 
 Let's start with List
@@ -593,7 +593,7 @@ val developersWhoLoveVim = List(
   "Zij",
   "Valentine",
   "Alan"
-) 
+)
 ```
 
 Want to add "Zack"...
@@ -619,13 +619,13 @@ Prepended Zack on the front.
 
 # Hmmm...
 
-Q: If we're always building new lists, isn't that really inefficient? 
+Q: If we're always building new lists, isn't that really inefficient?
 
 ---
 
 # Answer
 
-> Q: If we're always building new lists, isn't that really inefficient? 
+> Q: If we're always building new lists, isn't that really inefficient?
 
 A: Not if we're using collections like `List` in the way there were designed for.
 
@@ -668,10 +668,10 @@ Welcome to the Ammonite Repl 1.6.9
 (Scala 2.12.8 Java 1.8.0_192)
 If you like Ammonite, please support our development at www.patreon.com/lihaoyi
 
-@ List(1, 2, 3) 
+@ List(1, 2, 3)
 res0: List[Int] = List(1, 2, 3)
 
-@ Vector(10, 11, 12) 
+@ Vector(10, 11, 12)
 res1: Vector[Int] = Vector(10, 11, 12)
 ```
 
@@ -680,19 +680,19 @@ res1: Vector[Int] = Vector(10, 11, 12)
 # Mutable ones?
 
 ```scala
-@ ListBuffer(0, 1, 2) 
+@ ListBuffer(0, 1, 2)
 cmd2.sc:1: not found: value ListBuffer
 val res2 = ListBuffer(0, 1, 2)
            ^
 Compilation Failed
 
-@ import scala.collection.mutable.ListBuffer 
+@ import scala.collection.mutable.ListBuffer
 
-@ val buffer = ListBuffer(0, 1, 2) 
+@ val buffer = ListBuffer(0, 1, 2)
 
-@ buffer.append(3) 
+@ buffer.append(3)
 
-@ buffer 
+@ buffer
 res6: ListBuffer[Int] = ListBuffer(0, 1, 2, 3)
 ```
 
@@ -723,7 +723,7 @@ More on that another time.
 # Another point of divergence:
 
 > Java: Generally all mutable
-> 
+>
 > Scala: Immutable and Mutable (prefers immutable)
 
 Idiomatic scala will use immutable concepts more.
@@ -731,12 +731,12 @@ Idiomatic scala will use immutable concepts more.
 ---
 
 ```
- ____  _             _          __  __ 
+ ____  _             _          __  __
 | __ )(_) __ _   ___| |_ _   _ / _|/ _|
-|  _ \| |/ _` | / __| __| | | | |_| |_ 
+|  _ \| |/ _` | / __| __| | | | |_| |_
 | |_) | | (_| | \__ \ |_| |_| |  _|  _|
-|____/|_|\__, | |___/\__|\__,_|_| |_|  
-         |___/                         
+|____/|_|\__, | |___/\__|\__,_|_| |_|
+         |___/
 ```
 
 `BigInt`, `BigDecimal`
@@ -763,7 +763,7 @@ Q: What is the space complexity of factorial (tail rec solution)?
 
 # Trivia
 
-A: We used tail recursion to get rid of the stack frames, 
+A: We used tail recursion to get rid of the stack frames,
 
 but the return value itself takes us space.
 
@@ -814,14 +814,14 @@ We've only ever had one candidate mention this during our interviews.
 # BigInt in action
 
 ```scala
-val twoBillion = 2000000000 
+val twoBillion = 2000000000
 
-twoBillion * twoBillion 
+twoBillion * twoBillion
 // -1651507200
 
-val twoBillionBigInt = BigInt(twoBillion) 
+val twoBillionBigInt = BigInt(twoBillion)
 
-twoBillionBigInt * twoBillionBigInt 
+twoBillionBigInt * twoBillionBigInt
 // 4000000000000000000
 ```
 
@@ -858,9 +858,9 @@ technically you have 0% chance of hitting a number covered by `Float`.
 # Example
 
 ```scala
-var total = 0f 
+var total = 0f
 
-for (i <- 0 until 200) total += 0.1f 
+for (i <- 0 until 200) total += 0.1f
 
 println(total)
 // 20.00004F
@@ -877,9 +877,9 @@ If these were currency values, you'd be creating money!
 # BigDecimal version
 
 ```scala
-var total = BigDecimal("0") 
+var total = BigDecimal("0")
 
-for (i <- 0 until 200) total += BigDecimal("0.1") 
+for (i <- 0 until 200) total += BigDecimal("0.1")
 
 println(total)
 // 20.0
@@ -892,9 +892,9 @@ Note the use of strings.
 # Why use Strings?
 
 ```scala
-var total = BigDecimal("0") 
+var total = BigDecimal("0")
 
-for (i <- 0 until 200) total += BigDecimal(0.1f) 
+for (i <- 0 until 200) total += BigDecimal(0.1f)
 
 println(total)
 // 20.00000029802322400
@@ -924,12 +924,12 @@ There's no cumulative error here and we only care about it to 2.d.p anyway.
 ---
 
 ```
- ____                                             
-/ ___| _   _ _ __ ___  _ __ ___   __ _ _ __ _   _ 
+ ____
+/ ___| _   _ _ __ ___  _ __ ___   __ _ _ __ _   _
 \___ \| | | | '_ ` _ \| '_ ` _ \ / _` | '__| | | |
  ___) | |_| | | | | | | | | | | | (_| | |  | |_| |
 |____/ \__,_|_| |_| |_|_| |_| |_|\__,_|_|   \__, |
-                                            |___/ 
+                                            |___/
 ```
 
 ---
@@ -953,19 +953,19 @@ There's no cumulative error here and we only care about it to 2.d.p anyway.
 ---
 
 ```
-  ___                  _   _                 
- / _ \ _   _  ___  ___| |_(_) ___  _ __  ___ 
+  ___                  _   _
+ / _ \ _   _  ___  ___| |_(_) ___  _ __  ___
 | | | | | | |/ _ \/ __| __| |/ _ \| '_ \/ __|
 | |_| | |_| |  __/\__ \ |_| | (_) | | | \__ \
  \__\_\\__,_|\___||___/\__|_|\___/|_| |_|___/
-                                             
 
-  ____                                     _       
- / ___|___  _ __ ___  _ __ ___   ___ _ __ | |_ ___ 
+
+  ____                                     _
+ / ___|___  _ __ ___  _ __ ___   ___ _ __ | |_ ___
 | |   / _ \| '_ ` _ \| '_ ` _ \ / _ \ '_ \| __/ __|
 | |__| (_) | | | | | | | | | | |  __/ | | | |_\__ \
  \____\___/|_| |_| |_|_| |_| |_|\___|_| |_|\__|___/
 
                       ?
-                                                   
+
 ```
