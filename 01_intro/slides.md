@@ -96,6 +96,26 @@ For now recordings won't be accessible publicly.
 
 ---
 
+# Other trainings
+
+Lots of recordings from 2020 trainings.
+
+Tend to be more detailed, longer sessions.
+
+I reference them a lot through these talks for going further.
+
+You'll need access to quip: https://leadiq.quip.com/myagATVERdhk
+
+---
+
+# Getting help
+
+Slack group setup for questions.
+
+Post stuff in the public channels or DM me/Zij/Clement if you're paiseh.
+
+---
+
 # The analytics codebase
 
 Training is designed to prepare you for the analytics code base.
@@ -132,7 +152,7 @@ Software juniors will spend a few months in that. Analysts will stay there long 
 
 Later might move to other teams, or switch to other code bases.
 
-Much more complex stack (kafka, graphql, aws, zio, type classes...).
+Much more complex stack there (kafka, graphql, aws, zio, type classes...).
 
 ---
 
