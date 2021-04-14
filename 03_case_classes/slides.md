@@ -723,6 +723,18 @@ val score4 = score3.incrementLeft
 
 ---
 
+```
+  ____          _        _   _            _
+ / ___|___   __| | ___  | | | |_ __   ___| | ___  ___
+| |   / _ \ / _` |/ _ \ | | | | '_ \ / __| |/ _ \/ __|
+| |__| (_) | (_| |  __/ | |_| | | | | (__| |  __/\__ \ ?
+ \____\___/ \__,_|\___|  \___/|_| |_|\___|_|\___||___/
+```
+
+Comments/reflections from Code Uncles?
+
+---
+
 # Summary
 
 - scala has `class` and `case class`
