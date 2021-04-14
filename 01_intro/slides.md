@@ -136,6 +136,18 @@ Much more complex stack (kafka, graphql, aws, zio, type classes...).
 
 ---
 
+# Time in lieu
+
+This training time counts as work.
+
+There's no homework because you're already very busy.
+
+If you _do_ want extra exercises, we can point you to things.
+
+Keep track of that time spent and we'll add it to your time in lieu.
+
+---
+
 # What about product orientation?
 
 Easier to do that when you've joined and can access our code, docs etc...
@@ -403,6 +415,54 @@ sudo sh -c '(echo "#!/usr/bin/env sh" && curl -L https://github.com/com-lihaoyi/
 - run `lookatme slides.md`
 
 (Or just read them in a text editor, they're just markdown files after all)
+
+---
+
+```
+  ____          _        _   _            _
+ / ___|___   __| | ___  | | | |_ __   ___| | ___
+| |   / _ \ / _` |/ _ \ | | | | '_ \ / __| |/ _ \
+| |__| (_) | (_| |  __/ | |_| | | | | (__| |  __/
+ \____\___/ \__,_|\___|  \___/|_| |_|\___|_|\___|
+
+ _____ _
+|_   _(_)_ __ ___   ___
+  | | | | '_ ` _ \ / _ \
+  | | | | | | | | |  __/
+  |_| |_|_| |_| |_|\___|
+
+```
+
+Time for our code uncles to reflect on their experiences learning scala.
+
+---
+
+# Uncle Zij
+
+Get hands dirty:
+
+- ammonite repl
+
+
+- scala-exercises website (interactive)
+
+---
+
+# Uncle Clement
+
+- importance of reading and writing code
+
+
+- asking lots of questions in the process.
+
+
+- building a whole project from scratch (build.sbt, dependencies.scala, main files)
+
+
+- read the sbt documentations step by step
+
+
+- intellij tips
 
 ---
 
