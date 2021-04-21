@@ -471,9 +471,11 @@ val zij: (String, Int, String) = ("Zij", 26, "Linguistic fun facts")
 Throw in a key value:
 
 ```scala
-val thilo = ("Thilo", 28, "Reading scala puzzlers", ("nationality", "German"))
+val thilo =
+  ("Thilo", 28, "Reading scala puzzlers", ("nationality", "German"))
 
-val zij: (String, Int, String, (String, String)) = ("Zij", 26, "Linguistic fun facts", ("alias", "Dmitri"))
+val zij: (String, Int, String, (String, String)) =
+  ("Zij", 26, "Linguistic fun facts", ("alias", "Dmitri"))
 ```
 
 ---
@@ -486,7 +488,7 @@ Q: How high can we go?
 
 # Pattern matching
 
-Can destructure them these nested structures nicely:
+Can destructure nested tuples nicely:
 
 ```scala
 val zij = ("Zij", 26, "Linguistic fun facts", ("alias", "Dmitri"))
@@ -567,7 +569,9 @@ Let's start with List
 
 Means different things in different languages.
 
-Scala's List is a very specific kind of structure, different to the "list" from other languages (e.g. python).
+Scala's List is a very specific kind of structure,
+
+different to the "list" from other languages (e.g. python).
 
 ---
 
@@ -587,7 +591,7 @@ Totally immutable
 I have a list of names and I want to add a new one on.
 
 ```scala
-val developersWhoLoveVim = List(
+val vimbeciles = List(
   "Clement",
   "Rohan",
   "Zij",
@@ -607,7 +611,7 @@ But can't modify the list.
 Construct a new list.
 
 ```scala
-val updatedDevelopersWhoLoveVim = "Zack" :: developersWhoLoveVim
+val updatedVimbeciles = "Zack" :: vimbeciles
 // List("Zack", "Clement", "Rohan", "Zij", "Valentine", "Alan")
 ```
 
