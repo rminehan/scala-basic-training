@@ -29,6 +29,20 @@ Just yell out if you have questions.
 
 ---
 
+# Zooming out
+
+Case classes are "scala only".
+
+No java equivalent.
+
+---
+
+# Likewise
+
+`static` is a java concept, but not a scala one.
+
+---
+
 # What we'll learn
 
 - how scala represents java's "static" concept
@@ -52,6 +66,12 @@ That helps you see how java concepts map to scala concepts.
 # Starting example
 
 A java wrapper for stictly positive integers.
+
+ie. a little class that wraps around an integer and only lets the value be positive.
+
+---
+
+# Code
 
 ```java
 public class PositiveInt {
@@ -237,7 +257,7 @@ object PositiveInt {
 - there's no `get` wrapper needed - the input value is exposed by `val`
 
 ```scala
-val p = PositiveInt(3)
+val p = new PositiveInt(3)
 
 println(p.value) // prints 3
 ```
