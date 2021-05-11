@@ -289,7 +289,7 @@ def mapStringsToInts(inputs: List[String], process: String => Int): List[Int] = 
 def mapStringsToBooleans(inputs: List[String], process: String => Boolean): List[Boolean] = inputs match {
   case Nil => Nil
   case head :: tail => process(head) :: mapStringsToBooleans(tail, process)
-})
+}
 ```
 
 Just did find-replace: `Int` -> `Boolean`
@@ -299,12 +299,12 @@ Just did find-replace: `Int` -> `Boolean`
 # Abstract with a type parameter
 
 ```scala
-def mapStringsToInts(inputs: List[String], process: String => Int): List[Int] = inputs match {
+def mapStringsToInts(...): List[Int] = inputs match {
   case Nil => Nil
   case head :: tail => process(head) :: mapStringsToInts(tail, process)
 }
 
-def mapStringsToBooleans(inputs: List[String], process: String => Boolean): List[Boolean] = inputs match {
+def mapStringsToBooleans(...): List[Boolean] = inputs match {
   case Nil => Nil
   case head :: tail => process(head) :: mapStringsToBooleans(tail, process)
 }
@@ -391,7 +391,7 @@ Note above explicit type parameters (compiler couldn't infer them).
 Our journey of abstraction:
 
 ```
-          lengths                 (Specific List[Int] => List[String] functions)
+          lengths                 (Specific List[String] => List[Int] functions)
            parse
 
             |
@@ -803,7 +803,7 @@ names.map(_.toUpperCase)
 names.filter(_ == "Enxhell") 
 ```
 
-We reimplemented a non-tail recursive implementation of `map`.
+We reimplemented a non-tail recursive versions of `map` and `filter`.
 
 ---
 
@@ -814,7 +814,7 @@ def demo(combine: (Int, Int) => Int): Unit = {
   println(s"1 combine 2 = ${combine(1, 2)}")
   println(s"2 combine 3 = ${combine(2, 3)}")
   println(s"5 combine 7 = ${combine(5, 7)}")
-} 
+}
 ```
 
 ---
@@ -822,13 +822,19 @@ def demo(combine: (Int, Int) => Int): Unit = {
 # Calling it
 
 ```scala
-demo((a, b) => a + b) 
+def demo(combine: (Int, Int) => Int): Unit = {
+  println(s"1 combine 2 = ${combine(1, 2)}")
+  println(s"2 combine 3 = ${combine(2, 3)}")
+  println(s"5 combine 7 = ${combine(5, 7)}")
+}
+
+demo((a, b) => a + b)
 //1 combine 2 = 3
 //2 combine 3 = 5
 //5 combine 7 = 12
 
 
-demo((a, b) => a * b) 
+demo((a, b) => a * b)
 //1 combine 2 = 2
 //2 combine 3 = 6
 //5 combine 7 = 35
@@ -841,12 +847,19 @@ demo((a, b) => a * b)
 Identical to previous slide
 
 ```scala
+def demo(combine: (Int, Int) => Int): Unit = {
+  println(s"1 combine 2 = ${combine(1, 2)}")
+  println(s"2 combine 3 = ${combine(2, 3)}")
+  println(s"5 combine 7 = ${combine(5, 7)}")
+}
+
+demo((a, b) => a + b)
 demo(_ + _) 
 //1 combine 2 = 3
 //2 combine 3 = 5
 //5 combine 7 = 12
 
-
+demo((a, b) => a * b)
 demo(_ * _) 
 //1 combine 2 = 2
 //2 combine 3 = 6
@@ -856,6 +869,20 @@ demo(_ * _)
 The first underscore represents the first parameter.
 
 The second underscore represents the second parameter.
+
+---
+
+# Requires the order to make sense
+
+```scala
+demo((a, b) => b / a)
+
+// NOT the same as:
+demo(_ / _)
+
+// which would be like:
+demo((a, b) => a / b)
+```
 
 ---
 

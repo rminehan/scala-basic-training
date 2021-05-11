@@ -415,7 +415,7 @@ val list = List(1, 2, 3)
 Analogous to:
 
 ```scala
-blah match {
+List(1, 2, 3) match {
   case list => ...
 }
 ```
