@@ -270,7 +270,7 @@ def demo(): Unit = {
 List(1, 2, 3).map(_ => ())
 ```
 
-This function is explicitly returning "the unit".
+Functions explicitly using "the unit".
 
 ---
 
