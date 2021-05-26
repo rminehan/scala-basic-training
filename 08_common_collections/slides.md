@@ -1156,7 +1156,7 @@ That would require:
 - an insert heavy workload
 
 
-- a bit enough list to justify it
+- a big enough list to justify it
 
 Rarely happens.
 
