@@ -2324,8 +2324,8 @@ A few variations:
 
 // Product
 (1 to 4).foldLeft(1) { (acc, next) => acc * next }
-(1 to 4).foldLeft(1) { _ + _ }
-(1 to 4).foldLeft(1)(_ + _)
+(1 to 4).foldLeft(1) { _ * _ }
+(1 to 4).foldLeft(1)(_ * _)
 ```
 
 ---
