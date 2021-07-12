@@ -1748,8 +1748,8 @@ def trimToMaxBytes(byteLimit: Int)(str: String): String = {
 @ "abc".substring(0, "abc".length - 1) 
 res17: String = "ab"
 
-@ "".substring(0, "abc".length - 1) 
-// java.lang.StringIndexOutOfBoundsException: String index out of range: 2
+@ "".substring(0, "".length - 1)
+// java.lang.StringIndexOutOfBoundsException: String index out of range: -1
 ```
 
 ---
