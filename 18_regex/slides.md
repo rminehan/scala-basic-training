@@ -667,6 +667,57 @@ They're Italian cousin Mário
 
 ---
 
+# Example from analytics-scripts
+
+Code wants to keep just lines whale lines:
+
+```scala
+val whalesEmailList = whaleCustomersJSON
+  .filter(_.matches("""\{  "_id" : "Whales".*"""))
+  //                     ^^     ^ ^
+  ...
+```
+
+Whitespace logic is needlessly brittle
+
+Couples us to specific implementation details about how it's produced
+
+Could be silently dropping a lot of data
+
+```
+#regex-shaming
+```
+
+---
+
+# Alternatives
+
+Use `\s` with an appropriate quantifier
+
+```scala
+.filter(_.matches("""\{\s*"_id"\s*:\s*"Whales".*"""))
+```
+
+A bit harder to read though :sad-regex-parrot:
+
+---
+
+# Alternatives
+
+> A bit harder to read though :sad-regex-parrot:
+
+Parse a cleaned version of the string
+
+```scala
+.filter(_.replaceAll("\\s+", "").matches("""\{"_id":"Whales".*""")))
+//        ^^^^^^^^^^^^^^^^^^^^^^            ^^^^^^^^^^^^^^^^^^^^^
+//        Temp copy with spaces removed     Regex can assume no whitespace
+```
+
+Easier to read but a bit slower
+
+---
+
 # Observations of this in the wild
 
 The "regex" development cycle:
@@ -894,6 +945,22 @@ strings.collect { case s@compiled(_*) => s }
 
 (Example is a little awkward,
 see also [SO post](https://stackoverflow.com/questions/3021813/how-to-check-whether-a-string-fully-matches-a-regex-in-scala))
+
+---
+
+# Back to our example
+
+```scala
+val whalesEmailList = whaleCustomersJSON
+  .filter(_.matches("""\{  "_id" : "Whales".*"""))
+  ...
+```
+
+Being run over every line in this input file (potentially massive file)
+
+```
+#more-regex-shaming
+```
 
 ---
 
@@ -1186,7 +1253,7 @@ Standard Input                Standard Output
 ---------------------------------------------
 boban                         boban
 jones    (x)                  Boban
-bobn                          the boban
+bobn     (x)                  the boban
 Boban
 jimmy    (x)
 the boban
@@ -1533,16 +1600,9 @@ Hopefully you feel more comfortable
 
 # If you remember one thing...
 
-Sometimes regex _isn't_ the best tool for the job:
+Use regex with care
 
-- parsing complex nested data structures
-
-
-- searching massive databases
-
-Regex's often become brittle and hard to read
-
-Use with care!
+Sometimes it _isn't_ the best tool for the job
 
 ---
 
@@ -1561,4 +1621,4 @@ Use with care!
 
 ```
 
-Or maybe you want to hear Clement do more foreign accents?
+Or maybe you want to hear Clement do more foreign accents (:aussie-parrot:)?
