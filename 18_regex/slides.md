@@ -659,7 +659,7 @@ Who are we forgetting?
 [a-zA-ZüÜ]+
 ```
 
-They're Italian cousin Mário
+Their Italian cousin Mário
 
 > ééééh! You forget about-á me-á!?
 
