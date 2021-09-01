@@ -927,10 +927,12 @@ val regex: Regex = "boban.+jones".r
 Compilation takes time
 
 ```scala
-val strings = List("Boban", "Zack", "Willy", "Zij", "Lulu")
+// Uncompiled example
+strings.filter(_.someRegexFunction("boban.+jones"))
 
-// Recompiles the regex on every iteration
-strings.filter(_.matches("boban.+jones"))
+// Compiled example
+val compiled = "boban.+jones".r
+strings.filter(_.someRegexFunction(compiled))
 ```
 
 ---
