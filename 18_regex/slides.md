@@ -948,8 +948,6 @@ val compiled = "boban.+jones".r
 ...
 ```
 
-see also [SO post](https://stackoverflow.com/questions/3021813/how-to-check-whether-a-string-fully-matches-a-regex-in-scala))
-
 ---
 
 # Back to our example
