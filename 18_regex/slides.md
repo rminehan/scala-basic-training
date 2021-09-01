@@ -78,7 +78,7 @@ maybe you're using the wrong tool
 - basic syntax
 
 
-- best practices
+- dirty things with regex
 
 
 - performance notes
@@ -467,6 +467,8 @@ The sad reality is that it's more like sql:
 
 etc...
 
+To regex101!
+
 ---
 
 # Common usage
@@ -477,24 +479,25 @@ Most regex is transferable
 
 ---
 
+
 ```
- ____            _
-| __ )  ___  ___| |_
-|  _ \ / _ \/ __| __|
-| |_) |  __/\__ \ |_
-|____/ \___||___/\__|
-
- ____                 _   _
-|  _ \ _ __ __ _  ___| |_(_) ___ ___  ___
-| |_) | '__/ _` |/ __| __| |/ __/ _ \/ __|
-|  __/| | | (_| | (__| |_| | (_|  __/\__ \
-|_|   |_|  \__,_|\___|\__|_|\___\___||___/
-
+ ____  _      _           _____ _     _                            _ _   _     
+|  _ \(_)_ __| |_ _   _  |_   _| |__ (_)_ __   __ _ ___  __      _(_) |_| |__  
+| | | | | '__| __| | | |   | | | '_ \| | '_ \ / _` / __| \ \ /\ / / | __| '_ \ 
+| |_| | | |  | |_| |_| |   | | | | | | | | | | (_| \__ \  \ V  V /| | |_| | | |
+|____/|_|_|   \__|\__, |   |_| |_| |_|_|_| |_|\__, |___/   \_/\_/ |_|\__|_| |_|
+                  |___/                       |___/                            
+ ____                      
+|  _ \ ___  __ _  _____  __
+| |_) / _ \/ _` |/ _ \ \/ /
+|  _ <  __/ (_| |  __/>  < 
+|_| \_\___|\__, |\___/_/\_\
+           |___/                 
 ```
 
 ---
 
-# The problem with regex
+# Dirty things with regex
 
 - hard to read
 
@@ -924,6 +927,8 @@ val regex: Regex = "boban.+jones".r
 Compilation takes time
 
 ```scala
+val strings = List("Boban", "Zack", "Willy", "Zij", "Lulu")
+
 // Recompiles the regex on every iteration
 strings.filter(_.matches("boban.+jones"))
 ```
@@ -936,14 +941,13 @@ If you are using the same regex many times consider compiling it once and cachin
 
 ```scala
 // Recompiles the regex on every iteration
-strings.filter(_.matches("boban.+jones"))
+strings.findFirstIn(_.matches("boban.+jones"))
 
 // Compile it once
 val compiled = "boban.+jones".r
-strings.collect { case s@compiled(_*) => s }
+...
 ```
 
-(Example is a little awkward,
 see also [SO post](https://stackoverflow.com/questions/3021813/how-to-check-whether-a-string-fully-matches-a-regex-in-scala))
 
 ---
@@ -1420,7 +1424,15 @@ See [our kata](https://github.com/rminehan/vim-kata) for more details
 
 You want to do:
 
-> Find all people with name "boban jones" where there could be boundary whitespace
+> We have Zij on the customer support team
+>
+> received a bug report for a customer "boban jones", we dont know his Id
+>
+> database is not clean, names can have multiple whitespaces
+>
+> might contain "   boban   jones    "
+>
+> Find customer with name "boban jones" where there could be boundary whitespace
 >
 > or multiple whitespace characters between "boban" and "jones"
 
@@ -1590,11 +1602,52 @@ But the principle is the same
 
 ---
 
+# In Summary
+
+## Goals
+
+- cement the basic syntax
+
+
+- understand good and bad practices
+
+
+- create general familiarity
+
+
+## Agenda
+
+
+- basic syntax
+
+
+- dirty things with regex
+
+
+- performance notes
+
+
+- regex with scala
+
+
+- regex on the cli
+
+
+- regex in vim
+
+
+- regex in sql/mongo
+
+
+---
+
 # Conclusion
 
 Regex pops up everywhere
 
-Hopefully you feel more comfortable
+Hopefully you feel more comfortable!
+
+
 
 ---
 
